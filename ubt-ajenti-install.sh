@@ -13,7 +13,7 @@ sudo apt-get autoremove && sudo apt-get remove apache2* -y
 apt-get install ajenti-v ajenti-v-nginx ajenti-v-mysql ajenti-v-php-fpm php5-mysql -y
 
 # Install Ruby
-apt-get install ajenti-v-ruby-puma -y
+#apt-get install ajenti-v-ruby-puma -y
 
 # Install Python
 apt-get install ajenti-v-python-gunicorn -y
@@ -23,10 +23,10 @@ apt-get install python-pip -y
 apt-get install ajenti-v-ftp-pureftpd -y
 
 # Install Mail Server
-apt-get install ajenti-v-mail -y
+#apt-get install ajenti-v-mail -y
 
 # Add POP support
-apt-get install courier-pop -y
+#apt-get install courier-pop -y
 
 # Restart Services
 sudo service php5-fpm restart
