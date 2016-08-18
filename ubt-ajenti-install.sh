@@ -10,7 +10,7 @@ service ajenti restart
 sudo apt-get autoremove && sudo apt-get remove apache2* -y
 
 # Install Ajenti-v
-apt-get install ajenti-v ajenti-v-nginx ajenti-v-mysql ajenti-v-php-fpm php5-mysql -y
+apt-get install ajenti-v ajenti-v-nginx ajenti-v-mysql ajenti-v-php-fpm php5-mysql zip -y
 
 # Install Ruby
 #apt-get install ajenti-v-ruby-puma -y
