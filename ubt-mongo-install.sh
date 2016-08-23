@@ -17,7 +17,7 @@ db.createUser(
     roles: [ { role: "userAdminAnyDatabase", db: "admin" } ]
   }
 );
-db.grantRolesToUser("sya_mongo_adm",["readWrite"]);
+db.grantRolesToUser("adm",["readWrite"]);
 
 use myDB
 db.createUser(
