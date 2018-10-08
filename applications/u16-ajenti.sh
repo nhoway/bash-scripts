@@ -1,5 +1,4 @@
 #!/bin/bash
-sudo su
 
 # Install Ajenti
 wget http://repo.ajenti.org/debian/key -O- | apt-key add -
@@ -59,6 +58,3 @@ apt-get install ajenti-v-ftp-pureftpd -y
 service php7.0-fpm restart
 service nginx restart
 service ajenti restart
-
-# Exit sudo
-exit
