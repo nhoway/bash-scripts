@@ -1,7 +1,7 @@
 #!/bin/bash
 # Source : https://www.howtoforge.com/tutorial/install-mongodb-on-ubuntu-16.04/
 CDIR="$(dirname `realpath -s $0`)/../.."
-CCNF="$CDIR/.sya"
+CCNF="$CDIR/.bs_configs"
 
 . $CDIR/bash-scripts/scripts/store-config.sh
 if [ -z "$1" ]; then 

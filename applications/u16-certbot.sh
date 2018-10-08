@@ -1,6 +1,6 @@
 #!/bin/bash
 CDIR="$(dirname `realpath -s $0`)/../.."
-CCNF="$CDIR/.sya"
+CCNF="$CDIR/.bs_configs"
 
 . $CDIR/bash-scripts/scripts/store-config.sh
 if [ -z "$1" ]; then 
