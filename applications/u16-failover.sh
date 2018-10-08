@@ -22,6 +22,8 @@ CONFIG="/etc/network/interfaces.d/50-cloud-init.cfg"
 sudo touch "$CONFIG"
 sed -i "/$INTERFACE/d" "$CONFIG"
 
+# Switch from default server IP (given by OVH DHCP Server) to the failover
+# Outbound connections will use the failover IP
 sudo tee -a "$CONFIG" <<EOF
 auto $INTERFACE
 iface $INTERFACE inet static
