@@ -5,7 +5,7 @@ CDIR="$(dirname `realpath -s $0`)/../.."
 CCNF="$CDIR/.sya"
 
 . $CDIR/bash-scripts/scripts/store-config.sh
-if [[ $1 ]]; then
+if [ -z "$1" ]; then 
   LDAP_PASSWD=$1;
 else
   . $CDIR/bash-scripts/scripts/generate-password.sh

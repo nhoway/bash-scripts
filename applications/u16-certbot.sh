@@ -3,13 +3,13 @@ CDIR="$(dirname `realpath -s $0`)/../.."
 CCNF="$CDIR/.sya"
 
 . $CDIR/bash-scripts/scripts/store-config.sh
-if [[ $1 ]]; then
+if [ -z "$1" ]; then 
   DOMAIN=$1;
 else
   DOMAIN="$(askconfig $CCNF DOMAIN)";
 fi
 
-if [[ $2 ]]; then
+if [ -z "$2" ]; then 
   EMAIL=$2;
 else
   EMAIL="$(askconfig $CCNF EMAIL)";
