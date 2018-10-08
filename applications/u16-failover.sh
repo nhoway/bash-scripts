@@ -22,7 +22,7 @@ CONFIG="/etc/network/interfaces.d/50-cloud-init.cfg"
 sudo touch "$CONFIG"
 sed -i "/$INTERFACE/d" "$CONFIG"
 
-sudo tee -a /etc/network/interfaces.d/60-fail-over.cfg <<EOF
+sudo tee -a "$CONFIG" <<EOF
 auto $INTERFACE
 iface $INTERFACE inet static
         address $FAILOVERIP
