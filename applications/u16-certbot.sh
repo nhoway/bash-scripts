@@ -1,8 +1,8 @@
 #!/bin/bash
-CDIR="$(dirname `realpath -s $0`)/../.."
-CCNF="$CDIR/.bs_configs"
+CDIR="$(dirname `realpath -s $0`)/.."
+CCNF="$CDIR/.conf"
 
-. $CDIR/bash-scripts/scripts/store-config.sh
+. $CDIR/scripts/store-config.sh
 if [ -z "$1" ]; then 
   DOMAIN=$1;
 else

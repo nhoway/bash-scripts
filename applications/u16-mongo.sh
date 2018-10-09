@@ -1,13 +1,13 @@
 #!/bin/bash
 # Source : https://www.howtoforge.com/tutorial/install-mongodb-on-ubuntu-16.04/
-CDIR="$(dirname `realpath -s $0`)/../.."
-CCNF="$CDIR/.bs_configs"
+CDIR="$(dirname `realpath -s $0`)/.."
+CCNF="$CDIR/.conf"
 
-. $CDIR/bash-scripts/scripts/store-config.sh
+. $CDIR/scripts/store-config.sh
 if [ -z "$1" ]; then 
   MONGO_PASSWD=$1;
 else
-  . $CDIR/bash-scripts/scripts/generate-password.sh
+  . $CDIR/scripts/generate-password.sh
   MONGO_PASSWD="$(generatePassword 25)";
   setconfig $CCNF "MONGO_PASSWD" "$MONGO_PASSWD";
 fi

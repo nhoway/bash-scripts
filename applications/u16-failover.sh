@@ -1,11 +1,11 @@
 #!/bin/bash
-CDIR="$(dirname `realpath -s $0`)/../.."
-CCNF="$CDIR/.bs_configs"
+CDIR="$(dirname `realpath -s $0`)/.."
+CCNF="$CDIR/.conf"
 
 # PROMPT CUSTOM VALUES
 ########################################
 
-. $CDIR/bash-scripts/scripts/store-config.sh
+. $CDIR/scripts/store-config.sh
 if [ -z "$1" ]; then 
   FAILOVERIP="$(askconfig $CCNF FAILOVERIP)";
 else

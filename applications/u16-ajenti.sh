@@ -7,14 +7,14 @@ apt-get update -y
 apt-get upgrade -y
 
 # Get mysql root password
-CDIR="$(dirname `realpath -s $0`)/../.."
-CCNF="$CDIR/.bs_configs"
+CDIR="$(dirname `realpath -s $0`)/.."
+CCNF="$CDIR/.conf"
 
-. $CDIR/bash-scripts/scripts/store-config.sh
+. $CDIR/scripts/store-config.sh
 if [ -z "$1" ]; then 
   MYSQL_PASSWD=$1;
 else
-  . $CDIR/bash-scripts/scripts/generate-password.sh
+  . $CDIR/scripts/generate-password.sh
   MYSQL_PASSWD="$(generatePassword 25)";
   setconfig $CCNF "MYSQL_PASSWD" "$MYSQL_PASSWD";
 fi
