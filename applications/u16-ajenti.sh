@@ -12,11 +12,11 @@ CCNF="$CDIR/.conf"
 
 . $CDIR/scripts/store-config.sh
 if [ -z "$1" ]; then 
-  MYSQL_PASSWD=$1;
-else
   . $CDIR/scripts/generate-password.sh
   MYSQL_PASSWD="$(generatePassword 25)";
   setconfig $CCNF "MYSQL_PASSWD" "$MYSQL_PASSWD";
+else
+  MYSQL_PASSWD=$1;
 fi
 
 # Prepare debconf

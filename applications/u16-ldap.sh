@@ -6,11 +6,11 @@ CCNF="$CDIR/.conf"
 
 . $CDIR/bash-scripts/scripts/store-config.sh
 if [ -z "$1" ]; then 
-  LDAP_PASSWD=$1;
-else
   . $CDIR/bash-scripts/scripts/generate-password.sh
   LDAP_PASSWD="$(generatePassword 25)";
   setconfig $CCNF "LDAP_PASSWD" "$LDAP_PASSWD";
+else
+  LDAP_PASSWD=$1;
 fi
 
 # INSTALL LDAP SERVER

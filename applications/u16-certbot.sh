@@ -4,15 +4,15 @@ CCNF="$CDIR/.conf"
 
 . $CDIR/scripts/store-config.sh
 if [ -z "$1" ]; then 
-  DOMAIN=$1;
-else
   DOMAIN="$(askconfig $CCNF DOMAIN)";
+else
+  DOMAIN=$1;
 fi
 
 if [ -z "$2" ]; then 
-  EMAIL=$2;
-else
   EMAIL="$(askconfig $CCNF EMAIL)";
+else
+  EMAIL=$2;
 fi
 
 sudo apt-get install letsencrypt -y

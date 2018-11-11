@@ -4,12 +4,12 @@ CDIR="$(dirname `realpath -s $0`)/.."
 CCNF="$CDIR/.conf"
 
 . $CDIR/scripts/store-config.sh
-if [ -z "$1" ]; then 
-  MONGO_PASSWD=$1;
-else
+if [ -z "$1" ]; then
   . $CDIR/scripts/generate-password.sh
   MONGO_PASSWD="$(generatePassword 25)";
   setconfig $CCNF "MONGO_PASSWD" "$MONGO_PASSWD";
+else
+  MONGO_PASSWD=$1;
 fi
 
 # INSTALL MONGO
