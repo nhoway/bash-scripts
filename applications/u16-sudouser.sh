@@ -28,7 +28,7 @@ else
 fi
 
 # Grant sudo
-sudo usermod -aG sudo "$SUDO_USERNAME"
+sudo usermod -aG admin "$SUDO_USERNAME"
 
 # Backup SSH authorized keys file
 mkdir -p "/home/$SUDO_USERNAME/.ssh"
@@ -63,3 +63,20 @@ fi
 if [ ! -z "$KEYCONTENT" ]; then
   rm $KEYPATH
 fi
+
+# If you want to use sudo command without having to type password,
+# run `sudo visudo` and change this line:
+# # Members of the admin group may gain root privileges
+# %admin  ALL=(ALL) ALL
+
+# to this line:
+# # Members of the admin group may gain root privileges
+# %admin  ALL=(ALL) NOPASSWD:ALL
+
+# And move it under this line:
+# # Allow members of group sudo to execute any command
+# %sudo   ALL=(ALL:ALL) ALL
+
+# and run sudo service sudo restart
+
+# Then edit /etc/shh/sshd_config to disable root login and password auth
