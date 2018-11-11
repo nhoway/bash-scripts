@@ -51,6 +51,7 @@ if [ ! -z "$KEYCONTENT" ]; then
   echo "$KEYCONTENT" > $KEYPATH
 fi
 
+# Check public key validity & do copy
 if [ -z "$(ssh-keygen -l -f $1 2>/dev/null)" ]; then
   echo "Given key is not valid, abording.";
 else
@@ -58,8 +59,7 @@ else
   echo "Public key succesfully added to authorized keys.";
 fi
 
+# Clear temporary public key file if key was given into stdin
 if [ ! -z "$KEYCONTENT" ]; then
   rm $KEYPATH
 fi
-
-# Test public key validity : ssh-keygen -l -f ./mykey.pub
