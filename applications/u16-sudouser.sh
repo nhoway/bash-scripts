@@ -51,7 +51,12 @@ if [ ! -z "$KEYCONTENT" ]; then
   echo "$KEYCONTENT" > $KEYPATH
 fi
 
-cat "$KEYPATH" >> "/home/$SUDO_USERNAME/.ssh/authorized_keys"
+if [ -z "$(ssh-keygen -l -f $1 2>/dev/null)" ]; then
+  echo "Given key is not valid, abording.";
+else
+  cat "$KEYPATH" >> "/home/$SUDO_USERNAME/.ssh/authorized_keys";
+  echo "Public key succesfully added to authorized keys.";
+fi
 
 if [ ! -z "$KEYCONTENT" ]; then
   rm $KEYPATH
